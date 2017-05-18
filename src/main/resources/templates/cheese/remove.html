@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+</head>
+<br/>
+<body>
+
+<form method="post">
+    <ul>
+        <li th:each="cheese: ${cheeses}">
+            <input type="checkbox" name="cheesed" th:attr="value=${cheese.key}" th:text="${cheese.key}"/>
+        </li>
+    </ul>
+
+    <input type="submit" value="Remove Cheese" />
+</form>
+
+</body>
+</html>
